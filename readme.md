@@ -1,4 +1,4 @@
-# Python scrapping
+# Python scraping
 Методы сбора и обработки данных при помощи Python  
 
 **Курс на GeekBrains от 23.07.2020**
