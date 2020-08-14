@@ -13,6 +13,10 @@ def cleaner_txt(txt):
     return txt
 
 
+def get_int_value(value):
+    return int(''.join(i for i in value[0] if i.isdigit()))
+
+
 def get_id(txt):
     return txt.replace('Арт. ', '').strip()
 
@@ -25,4 +29,4 @@ class LeroyparserItem(scrapy.Item):
     params_val = scrapy.Field(input_processor=MapCompose(cleaner_txt))
     params = scrapy.Field()
     href = scrapy.Field(output_processor=TakeFirst())
-    price = scrapy.Field(output_processor=TakeFirst())
+    price = scrapy.Field(output_processor=get_int_value)
